@@ -76,6 +76,11 @@ public class SelectionMenu : MonoBehaviour
         _AS.Play();
     }
 
+    public void SelectItem(int Index)
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
