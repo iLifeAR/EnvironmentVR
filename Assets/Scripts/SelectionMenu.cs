@@ -1,4 +1,3 @@
-using Oculus.Interaction.OVR.Input;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,31 +77,20 @@ public class SelectionMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OVRInput.Update();
-/*        if (!PlayerScript.Instance._CanSelect)
-        {
-            _Canvas.enabled = false;
-            return;
-        }*/
-        // _Canvas.enabled = OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger);
+        //OVRInput.Update();
 
 
-        if ((Input.GetKeyDown("f") || OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x>=0.9f) && _IsScrolling==null)
+
+        if ((Input.GetKeyDown("f") /*|| OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x>=0.9f*/) && _IsScrolling==null)
         {
             _IsScrolling = StartCoroutine(ScrollRoutine(1));
-        }else if ((Input.GetKeyDown("d") || OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x <= -0.9f) && _IsScrolling == null)
+        }else if ((Input.GetKeyDown("d") /*|| OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x <= -0.9f*/) && _IsScrolling == null)
         {
             _IsScrolling = StartCoroutine(ScrollRoutine(-1));
 
         }
 
 
-
-        if (OVRInput.Get(OVRInput.Button.Three) || Input.GetKeyDown("g"))
-        {
-            PlayAudio(SelectAudio);
-            PlayerScript.Instance._WarpShip.warp(SceneNames[ScrollIndex]);
-        }
 
     }
 }
