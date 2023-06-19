@@ -11,7 +11,7 @@ public class MasterScript : MonoBehaviour
 
     public string OTP;
     public string Grade;
-    public List<string> AvailableFilesNames;
+    [HideInInspector] public List<string> AvailableFilesNames;
     [HideInInspector] public List<string> AvailableFilesIds;
     public List<TextureGrabber> ModelQueue;
     public Transform CurrentModel;
@@ -21,6 +21,8 @@ public class MasterScript : MonoBehaviour
 
     public bool CanSelect;
     public TargetScript TargetScript;
+
+    public TargetScript[] Items;
 
     private void Awake()
     {

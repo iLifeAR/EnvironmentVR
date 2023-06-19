@@ -78,7 +78,7 @@ public class SelectionMenu : MonoBehaviour
 
     public void SelectItem(int Index)
     {
-
+        StartCoroutine(MasterScript.instance.Items[Index].OnActivateOffline());
     }
 
     // Update is called once per frame
