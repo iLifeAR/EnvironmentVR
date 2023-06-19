@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,15 +20,16 @@ public class MasterScript : MonoBehaviour
     public UIMaster UIScript;
 
     public bool CanSelect;
+    public TargetScript TargetScript;
 
     private void Awake()
     {
         instance = this;
         CanSelect = true;
         Grade = PlayerPrefs.GetString("Grade");
-        OTP = OTPCarrier.Instance.OTP;
+        //OTP = OTPCarrier.Instance.OTP;
     }
-    void Start()
+    async void Start()
     {
         if (OTP != string.Empty)
         {
@@ -44,7 +46,13 @@ public class MasterScript : MonoBehaviour
 
         UIScript = FindObjectOfType<Canvas>().GetComponent<UIMaster>();
         UIScript.SetUIControl(false);
+
+        await Task.Delay(1000 * 3);
+        StartCoroutine(TargetScript.OnActivateOffline());
+
+
     }
+
 
     IEnumerator Startup()
     {
