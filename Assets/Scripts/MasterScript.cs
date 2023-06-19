@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,7 +21,6 @@ public class MasterScript : MonoBehaviour
     public UIMaster UIScript;
 
     public bool CanSelect;
-    public TargetScript TargetScript;
 
     public TargetScript[] Items;
 
@@ -31,7 +31,7 @@ public class MasterScript : MonoBehaviour
         Grade = PlayerPrefs.GetString("Grade");
         //OTP = OTPCarrier.Instance.OTP;
     }
-    void Start()
+    async void Start()
     {
         if (OTP != string.Empty)
         {
@@ -48,6 +48,7 @@ public class MasterScript : MonoBehaviour
 
         UIScript = FindObjectOfType<Canvas>().GetComponent<UIMaster>();
         UIScript.SetUIControl(false);
+
 
     }
 
