@@ -732,7 +732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.00048828125, y: 0.11378479}
+  m_AnchoredPosition: {x: -0.00048828125, y: 0.11376953}
   m_SizeDelta: {x: 0.0892, y: 0.06711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4963238181313060053
@@ -752,6 +752,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -779,7 +780,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8742189926715823899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,6 +832,9 @@ MonoBehaviour:
   ScrollBounds: {x: -6000, y: 0}
   SlideAudio: {fileID: 8300000, guid: 2bc9f000b135237459b85f00c07a7418, type: 3}
   SelectAudio: {fileID: 8300000, guid: e21f37618932faf4399d11e4af805395, type: 3}
+  _Actions: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  JoystickInput: {x: 0, y: 0}
 --- !u!82 &8397190592623900097
 AudioSource:
   m_ObjectHideFlags: 0

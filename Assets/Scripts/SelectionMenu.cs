@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class SelectionMenu : MonoBehaviour
@@ -8,7 +9,7 @@ public class SelectionMenu : MonoBehaviour
     public RectTransform Scroll;
     public Canvas _Canvas;
     public float ScrollMultiplier;
-    public string[] SceneNames;
+    public TargetScript[] ContentItems;
     public int ScrollIndex = 0;
     public float ScrollTime;
     public Vector2 ScrollBounds;
@@ -19,11 +20,12 @@ public class SelectionMenu : MonoBehaviour
     public AudioClip SelectAudio;
 
     Coroutine _IsScrolling;
+    public InputActionReference _Actions;
+    public Vector2 JoystickInput;
 
-    // Start is called before the first frame update
     void Start()
     {
-        _AS=GetComponent<AudioSource>();    
+        _AS=GetComponent<AudioSource>();
     }
 
     IEnumerator ScrollRoutine(int DIR)
@@ -77,20 +79,14 @@ public class SelectionMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //OVRInput.Update();
+        JoystickInput = _Actions.action.ReadValue<Vector2>();
 
-
-
-        if ((Input.GetKeyDown("f") /*|| OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x>=0.9f*/) && _IsScrolling==null)
+        if ((Input.GetKeyDown("f") || JoystickInput.x >= 0.9f) && _IsScrolling==null)
         {
             _IsScrolling = StartCoroutine(ScrollRoutine(1));
-        }else if ((Input.GetKeyDown("d") /*|| OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x <= -0.9f*/) && _IsScrolling == null)
+        }else if ((Input.GetKeyDown("d") || JoystickInput.x <= -0.9f) && _IsScrolling == null)
         {
             _IsScrolling = StartCoroutine(ScrollRoutine(-1));
-
         }
-
-
-
     }
 }
