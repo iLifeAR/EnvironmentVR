@@ -29,7 +29,7 @@ public class MasterScript : MonoBehaviour
         Grade = PlayerPrefs.GetString("Grade");
         //OTP = OTPCarrier.Instance.OTP;
     }
-    async void Start()
+    void Start()
     {
         if (OTP != string.Empty)
         {
@@ -46,10 +46,6 @@ public class MasterScript : MonoBehaviour
 
         UIScript = FindObjectOfType<Canvas>().GetComponent<UIMaster>();
         UIScript.SetUIControl(false);
-
-        await Task.Delay(1000 * 3);
-        StartCoroutine(TargetScript.OnActivateOffline());
-
 
     }
 
