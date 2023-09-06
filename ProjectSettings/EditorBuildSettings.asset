@@ -16,5 +16,9 @@ EditorBuildSettings:
       type: 2}
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: d6c8a45fadd7a674daee24afd8fecf47,
       type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: ac316af592b19494a9375df92c7c3b17,
+      type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 22decaa6730126841a51754768c73040, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7aa6a8f4f69b58045ae23ca3ca254d9b,
       type: 2}
